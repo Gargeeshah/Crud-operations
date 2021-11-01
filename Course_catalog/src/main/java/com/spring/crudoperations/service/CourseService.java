@@ -35,5 +35,22 @@ public class CourseService {
         courseRepository.saveAndFlush(course);
     }
 
+    public Course patchData(HashMap<Object, Object> fields, String id) {
+        Course course = courseRepository.findById(id).get();
+
+        ObjectMapper objMapper = new ObjectMapper();
+        HashMap<String, Object> courseMap = objMapper.convertValue(course, HashMap.class);
+
+        for(String key : courseMap.keySet()){
+            if(fields.containsKey(key)){
+                Object value =  fields.get(key);
+                courseMap.put(key, value);
+            }
+        }
+        Course courseObj = objMapper.convertValue(courseMap, Course.class);
+        courseRepository.saveAndFlush(courseObj);
+        return courseObj;
+    }
+
 
 }

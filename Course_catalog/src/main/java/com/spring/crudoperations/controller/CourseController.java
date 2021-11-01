@@ -39,7 +39,10 @@ public class CourseController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-
+    @PatchMapping("/{topicId}/course/{id}")
+    public ResponseEntity patchData(@PathVariable String id, @RequestBody HashMap<Object, Object> fields){
+        return ResponseEntity.ok(courseService.patchData(fields, id));
+    }
 
 
 
