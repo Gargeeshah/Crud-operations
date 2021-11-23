@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Course_catalog" />
+        <module name="CourseStructure" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CourseStructure" options="-parameters" />
       <module name="Course_catalog" options="-parameters" />
     </option>
   </component>
