@@ -67,7 +67,7 @@ public class Course {
                 '}';
     }
 
-    public Course() {
+    public Course(String s, String microservices, String s1) {
     }
 
 
