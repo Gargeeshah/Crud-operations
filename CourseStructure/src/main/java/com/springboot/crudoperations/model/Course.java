@@ -50,6 +50,9 @@ public class Course {
         return topic;
     }
 
+    public Course(){
+
+    }
     public Course(String id, String courseName, String duration, Topic topic) {
         this.id = id;
         this.courseName = courseName;
@@ -67,8 +70,8 @@ public class Course {
                 '}';
     }
 
-    public Course(String s, String microservices, String s1) {
-    }
+//    public Course(String s, String microservices, String s1) {
+//    }
 
 
 }
